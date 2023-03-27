@@ -29,4 +29,3 @@ open_project ./$VIVADO_FOLDER/$VIVADO_FOLDER.xpr
 # Open GUI for visualization
 after 1000;
 start_gui -verbose
-#exit

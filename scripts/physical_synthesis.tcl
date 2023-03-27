@@ -44,4 +44,5 @@ report_power -file  $PROJECT_PATH/$REPORTS_FOLDR/imp_power.rpt
 
 # Open GUI for programming FPGA board or if visualization desired
 #start_gui -verbose
-#exit
+# If the GUI is enabled, then comment out the next line
+exit

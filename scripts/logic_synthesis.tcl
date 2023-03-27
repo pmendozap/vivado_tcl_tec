@@ -44,4 +44,5 @@ report_power -file $PROJECT_PATH/$REPORTS_FOLDR/syn_power.rpt
 
 # Can open the graphical environment if visualization desired 
 # start_gui
+# If the GUI is enabled, then comment out the next line
 exit

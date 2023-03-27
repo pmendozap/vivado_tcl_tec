@@ -30,6 +30,8 @@ open_project ./$VIVADO_FOLDER/$VIVADO_FOLDER.xpr
 # remove this flag if suspecting a problem when adding the files to the project
 # Design files
 add_files -norecurse -fileset sources_1 $PROJECT_PATH/src/design
+# IP files - Need to be added one by one
+#add_files -norecurse -fileset sources_1 $PROJECT_PATH/src/ips/clk_wiz_0/clk_wiz_0.xci
 # Testbench files
 add_files -norecurse -quiet -fileset sim_1 $PROJECT_PATH/src/testbench
 # Constraint files
@@ -38,4 +40,5 @@ add_files -norecurse -quiet -fileset constrs_1 $PROJECT_PATH/src/constraints/
 
 # Can open the graphical environment if visualization desired 
 # start_gui
+# If the GUI is enabled, then comment out the next line
 exit

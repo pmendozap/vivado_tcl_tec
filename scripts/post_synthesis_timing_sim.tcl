@@ -38,22 +38,25 @@ launch_simulation -simset sim_1 -mode post-synthesis -type timing
 # e.g.: /$SIMULATION_TOP/dut/mod1/mod2/signal_a  --> imports signal_a into the diagram (signal_a is part of instance mod2 which is part of instance mod1 inside instance dut)
 # e.g.: /$SIMULATION_TOP/dut/mod1/* --> import all signals from instance mod1
 
-add_wave /$SIMULATION_TOP/*
+add_wave /$SIMULATION_TOP/dut/*
 
 #wave dividers can be added.
 #add_wave_divider <name>
 
+puts "------------------------------------------\r\n            Running simulation            \r\n------------------------------------------";
+# run the simulation for a given time or until it finishes (using -all)
+# Available time units: ps, ns, us, ms, s 
+#run 1 us
+run -all
+
+puts "------------------------------------------";
+
+
 # Open the graphical environment for visualization
 # Remove if not needed (e.g. autoverificacion)
-after 10000
-start_gui
+start_gui -verbose
 
-# If the simulation only needs to print messages to terminal
-# e.g. in autoverification, then you can run the simulation 
-# for a given time or until it finishes (using -all)
-# for time units you can use ps, ns, us, ms, s 
-#do not use together with GUI option
-#run 1 us
-#run -all
+# If no GUI is not needed (start_gui is commented out), then enable exit
+# e.g. in autoverification
 
-exit
+#exit

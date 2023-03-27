@@ -19,12 +19,13 @@
 source ./scripts/globals.tcl
 
 # Create the project and directory structure
-file mkdir $PROJECT_PATH/src ;# [file mkdir] in Tcl is like mkdir -p
-file mkdir $PROJECT_PATH/src/design ;# [file mkdir] in Tcl is like mkdir -p
-file mkdir $PROJECT_PATH/src/testbench ;# [file mkdir] in Tcl is like mkdir -p
-file mkdir $PROJECT_PATH/src/constraints ;# [file mkdir] in Tcl is like mkdir -p
+file mkdir $PROJECT_PATH/src ;
+file mkdir $PROJECT_PATH/src/design ;
+file mkdir $PROJECT_PATH/src/testbench ;
+file mkdir $PROJECT_PATH/src/constraints ;
+file mkdir $PROJECT_PATH/src/ips ;
 file mkdir $PROJECT_PATH/$REPORTS_FOLDR ;
-file mkdir $PROJECT_PATH/$VIVADO_FOLDER ;# [file mkdir] in Tcl is like mkdir -p
+file mkdir $PROJECT_PATH/$VIVADO_FOLDER ;
 create_project -force $VIVADO_FOLDER ./$VIVADO_FOLDER -part $FPGA_MODEL
 
 # Add various sources to the project
@@ -32,6 +33,8 @@ create_project -force $VIVADO_FOLDER ./$VIVADO_FOLDER -part $FPGA_MODEL
 
 # Design files
 add_files -norecurse -fileset sources_1 $PROJECT_PATH/src/design
+# IP files - Need to be added one by one
+# add_files -norecurse -fileset sources_1 $PROJECT_PATH/src/ips/clk_wiz_0/clk_wiz_0.xci
 # Testbench files
 add_files -norecurse -fileset sim_1 $PROJECT_PATH/src/testbench
 # Constraint files
@@ -41,4 +44,5 @@ add_files -norecurse -fileset constrs_1 $PROJECT_PATH/src/constraints/
 # Can open the graphical environment if visualization desired
 # comment out the for batch mode
 #start_gui
+# If the GUI is enabled, then comment out the next line
 exit
