@@ -5,10 +5,10 @@
 #-- Componente:  Script de actualizacion de proyecto
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     update_project.tcl
-#-- Descripción: Actualiza el proyecto con nuevos archivos
+#-- Descripcion: Actualiza el proyecto con nuevos archivos
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #----------------------------------------------------------------------------------------------------
 

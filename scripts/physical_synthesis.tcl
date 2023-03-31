@@ -5,10 +5,10 @@
 #-- Componente:  Script de sintesis fisica
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     physical_synthesis.tcl
-#-- Descripción: Ejecuta la sintesis fisica y generacion del bitstream del diseno
+#-- Descripcion: Ejecuta la sintesis fisica y generacion del bitstream del diseno
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #----------------------------------------------------------------------------------------------------
 

@@ -5,10 +5,10 @@
 #-- Componente:  Script para abrir proyecto en el GUI
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     open_project_gui.tcl
-#-- Descripción: Abre el proyecto en el GUI de Vivado
+#-- Descripcion: Abre el proyecto en el GUI de Vivado
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #----------------------------------------------------------------------------------------------------
 

@@ -8,3 +8,5 @@
 src/ips/**/*.*
 #do not ignore the XCI files
 !src/ips/**/*.xci
+
+**/gtkwave_vcd/**/*

@@ -5,10 +5,10 @@
 // -- Componente:  Ejemplo - contador 16 bits
 // -- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 // -- Archivo:     counter_tb.sv
-// -- Descripción: Ejemplo contador
+// -- Descripcion: Ejemplo contador
 // --
 // ----------------------------------------------------------------------------------------------------
-// -- Revisión    Fecha        Revisor    Comentarios
+// -- Revision    Fecha        Revisor    Comentarios
 // -- 0           27-03-2023   PMP        Original
 // ----------------------------------------------------------------------------------------------------
 

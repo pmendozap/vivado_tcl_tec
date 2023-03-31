@@ -5,11 +5,11 @@
 #-- Componente:  Script de creacion de proyecto
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     create_project.tcl
-#-- Descripción: Genera un proyecto de vivado e incluye los archivos presentes en la carpetas de fuentes
+#-- Descripcion: Genera un proyecto de vivado e incluye los archivos presentes en la carpetas de fuentes
 #--              Genera la estructura de carpetas de fuentes de no existir
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #----------------------------------------------------------------------------------------------------
 
@@ -27,6 +27,12 @@ file mkdir $PROJECT_PATH/src/ips ;
 file mkdir $PROJECT_PATH/$REPORTS_FOLDR ;
 file mkdir $PROJECT_PATH/$VIVADO_FOLDER ;
 create_project -force $VIVADO_FOLDER ./$VIVADO_FOLDER -part $FPGA_MODEL
+
+# Miscellaneous folders
+if {[info exists GTKWAVE]} {
+    file mkdir $PROJECT_PATH/$GTKWAVE ;
+}
+
 
 # Add various sources to the project
 # If you need to check for subfolders remove the option -norecurse

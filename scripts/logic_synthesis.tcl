@@ -5,10 +5,10 @@
 #-- Componente:  Script de sintesis logica
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     logic_synthesis.tcl
-#-- Descripción: Ejecuta la sintesis logica del diseno
+#-- Descripcion: Ejecuta la sintesis logica del diseno
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #----------------------------------------------------------------------------------------------------
 

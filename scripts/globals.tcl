@@ -5,11 +5,12 @@
 #-- Componente:  Variables globales para el flujo de trabajo
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     globals.tcl
-#-- Descripción: Carga variables globales a los scripts
+#-- Descripcion: Carga variables globales a los scripts
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
+#-- 1           31-03-2023   PMP        Compatibilidad con GTKWave
 #----------------------------------------------------------------------------------------------------
 
 #global variables 
@@ -19,8 +20,11 @@
 set DESIGN_TOP "counter"
 set SIMULATION_TOP "counter_tb"
 
+# Choose waveform viewer (default vivado-gui)
+set GTKWAVE "gtkwave_vcd"
+
 # This is the project path
-set PROJECT_PATH "."
+set PROJECT_PATH [pwd]
 
 # Folder for the vivado project folder
 set VIVADO_FOLDER "vivado_project"

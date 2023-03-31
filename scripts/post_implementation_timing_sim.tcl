@@ -5,11 +5,12 @@
 #-- Componente:  Script de simulacion post-sintesis-fisica (post implementacion)
 #-- Autor:       Pablo Mendoza Ponce (pmendoza@itcr.ac.cr)
 #-- Archivo:     post_implementation_timing.tcl
-#-- Descripción: Ejecuta una simulacion post-sintesis-fisica usando modelos de retardo
+#-- Descripcion: Ejecuta una simulacion post-sintesis-fisica usando modelos de retardo
 #--
 #----------------------------------------------------------------------------------------------------
-#-- Revisión    Fecha        Revisor    Comentarios
+#-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
+#-- 1           31-03-2023   PMP        Compatibilidad con GTKWave
 #----------------------------------------------------------------------------------------------------
 
 
@@ -33,30 +34,67 @@ set_property -name xelab.more_options -value {-debug all} -objects [get_filesets
 set_property runtime {0} [get_filesets sim_1]
 launch_simulation -simset sim_1 -mode post-implementation -type timing
 
-# Add waves to the diagram
-# you can add as many waves as needed, make reference to modules hierarchically
-# e.g.: /$SIMULATION_TOP/dut/mod1/mod2/signal_a  --> imports signal_a into the diagram (signal_a is part of instance mod2 which is part of instance mod1 inside instance dut)
-# e.g.: /$SIMULATION_TOP/dut/mod1/* --> import all signals from instance mod1
-
-add_wave /$SIMULATION_TOP/dut/*
-
-#wave dividers can be added.
-#add_wave_divider <name>
-
-puts "------------------------------------------\r\n            Running simulation            \r\n------------------------------------------";
-# run the simulation for a given time or until it finishes (using -all)
-# Available time units: ps, ns, us, ms, s 
-#run 1 us
-run -all
-
-puts "------------------------------------------";
 
 
-# Open the graphical environment for visualization
-# Remove if not needed (e.g. autoverificacion)
-start_gui -verbose
 
-# If no GUI is not needed (start_gui is commented out), then enable exit
-# e.g. in autoverification
+# Define Visualization (by default vivado-gui)
+# Check globals for options
 
-#exit
+if {[info exists GTKWAVE]} {
+    # Option GTKWAVE
+    set VCD_FILE ${PROJECT_PATH}/${GTKWAVE}/${SIMULATION_TOP}_psyn_sim.vcd
+    open_vcd ${VCD_FILE}
+    
+    # Single singals can be captured
+    #log_vcd {/dut/clk_i}
+    #log_vcd {/dut/rst_i}
+
+    # All signals from a specific module can be captured
+    #log_vcd {/dut/inst_0/*}
+
+    # Or, all signals in the design can be captured (large size file)
+    log_vcd [get_objects -r * ]
+
+    # run the simulation for a given time or until it finishes (using -all)
+    # Available time units: ps, ns, us, ms, s 
+    #run 1 us
+    run -all
+
+    close_vcd
+
+    # Invoke GTKWave
+    if { [catch { exec gtkwave -f ${VCD_FILE} } msg] } {
+        puts "GTKWAVE $::errorInfo"
+    };
+
+    exit ;
+
+} else {
+    # Default option Vivado GUI
+
+    # The signals in the Testbench module are added by default
+    
+    # Additional Signals can be added
+
+    # you can add as many waves as needed, make reference to modules hierarchically
+    # e.g.: /$SIMULATION_TOP/dut/mod1/mod2/signal_a  --> imports signal_a into the diagram (signal_a is part of instance mod2 which is part of instance mod1 inside instance dut)
+    # e.g.: /$SIMULATION_TOP/dut/mod1/* --> import all signals from instance mod1
+
+    #add_wave /$SIMULATION_TOP/dut/*
+
+    #wave dividers can be added.
+    #add_wave_divider <name>
+
+    # run the simulation for a given time or until it finishes (using -all)
+    # Available time units: ps, ns, us, ms, s 
+    #run 1 us
+    run -all
+
+    # Open the graphical environment for visualization
+    # Remove if not needed (e.g. autoverificacion)
+    start_gui -verbose
+
+    # If no GUI is not needed (start_gui is commented out), then enable exit
+    # e.g. in autoverification
+    #exit
+}
