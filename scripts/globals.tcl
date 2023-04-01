@@ -21,7 +21,7 @@ set DESIGN_TOP "counter"
 set SIMULATION_TOP "counter_tb"
 
 # Choose waveform viewer (default vivado-gui)
-set GTKWAVE "gtkwave_vcd"
+#set GTKWAVE "gtkwave_vcd"
 
 # This is the project path
 set PROJECT_PATH [pwd]
