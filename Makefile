@@ -31,3 +31,6 @@ post_synth_sim:
 
 post_imp_sim:
 	vivado -mode tcl -source .\scripts\post_implementation_timing_sim.tcl
+
+program:
+	vivado -mode tcl -source .\scripts\program.tcl

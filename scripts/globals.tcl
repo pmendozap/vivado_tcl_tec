@@ -11,6 +11,7 @@
 #-- Revision    Fecha        Revisor    Comentarios
 #-- 0           27-03-2023   PMP        Original
 #-- 1           31-03-2023   PMP        Compatibilidad con GTKWave
+#-- 2           31-03-2023   PMP        Compatibilidad con programacion desde TCL
 #----------------------------------------------------------------------------------------------------
 
 #global variables 
@@ -35,10 +36,13 @@ set REPORTS_FOLDR "rpt"
 #FPGA model, choose accordingly
 #nexys 4
 set FPGA_MODEL "XC7A100TCSG324-1"
+set HW_DEV "xc7a100t_0"
 #basys 3
 #set FPGA_MODEL "XC7A35TCPG236-1"
+#set HW_DEV "xc7a35t_0"
 #nexys 7a
 #set FPGA_MODEL "XC7A100TCSG324-1"
+#set HW_DEV "xc7a100t_0"
 
 #Modify according to your PC capacity
 set JOBS "2"
