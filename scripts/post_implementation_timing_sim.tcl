@@ -41,6 +41,7 @@ launch_simulation -simset sim_1 -mode post-implementation -type timing
 # Check globals for options
 
 if {[info exists GTKWAVE]} {
+    file mkdir ${PROJECT_PATH}/${GTKWAVE} ;
     # Option GTKWAVE
     set VCD_FILE ${PROJECT_PATH}/${GTKWAVE}/${SIMULATION_TOP}_psyn_sim.vcd
     open_vcd ${VCD_FILE}
