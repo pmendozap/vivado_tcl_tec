@@ -14,7 +14,7 @@
 #----------------------------------------------------------------------------------------------------
 
 # Typical usage: vivado -mode tcl -source behavioral_sim.tcl
-source ./scripts/globals.tcl
+source ./globals.tcl
 
 after 1
 

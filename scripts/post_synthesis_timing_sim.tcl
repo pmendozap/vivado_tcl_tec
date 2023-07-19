@@ -14,7 +14,7 @@
 #----------------------------------------------------------------------------------------------------
 
 # Typical usage: vivado -mode tcl -source post_synthesis_timing.tcl
-source ./scripts/globals.tcl
+source ./globals.tcl
 
 after 1
 

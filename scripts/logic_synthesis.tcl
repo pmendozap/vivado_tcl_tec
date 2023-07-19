@@ -14,12 +14,12 @@
 
 # Typical usage: vivado -mode tcl -source logic_synthesis.tcl
 # Create the project and directory structure
-source ./scripts/globals.tcl
+source ./globals.tcl
 
 after 1
 
-file delete {*}[glob *backup.jou]
-file delete {*}[glob *backup.log]
+file delete {*}[glob -nocomplain *backup.jou]
+file delete {*}[glob -nocomplain *backup.log]
 
 # if needed, re-define TOP design unit
 #set DESIGN_TOP "counter"

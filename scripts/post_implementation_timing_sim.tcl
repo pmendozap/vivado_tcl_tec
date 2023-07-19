@@ -15,7 +15,7 @@
 
 
 # Typical usage: vivado -mode tcl -source post_implementation_timing.tcl
-source ./scripts/globals.tcl
+source ./globals.tcl
 
 after 1
 
