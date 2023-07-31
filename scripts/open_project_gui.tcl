@@ -15,7 +15,7 @@
 
 # Typical usage: vivado -mode tcl -source open_project_gui.tcl
 # Create the project and directory structure
-source ./scripts/globals.tcl
+source ./globals.tcl
 
 after 1
 
